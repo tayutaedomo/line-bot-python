@@ -13,6 +13,12 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
+## ENV
+```
+$ export LINE_CHANNEL_ACCESS_TOKEN=<YOUR_CHANNEL_ACCESS_TOKEN>
+$ export LINE_CHANNEL_SECRET=<YOUR_CHANNEL_SECRET>
+```
+
 ## Local Server
 ```
 $ cd line-bot-python
