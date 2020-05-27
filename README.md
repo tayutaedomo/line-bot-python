@@ -14,15 +14,25 @@ $ pip install -r requirements.txt
 ```
 
 ## ENV
+You have to set the following.
 ```
 $ export LINE_CHANNEL_ACCESS_TOKEN=<YOUR_CHANNEL_ACCESS_TOKEN>
 $ export LINE_CHANNEL_SECRET=<YOUR_CHANNEL_SECRET>
+```
+
+You should set the appropriate ENV of config.
+```
+$ export APP_SETTINGS="config.DevelopmentConfig"
+# or
+$ export APP_SETTINGS=config.StagingConfig
+# or
+$ export APP_SETTINGS=config.ProductionConfig
 ```
 
 ## Local Server
 ```
 $ cd line-bot-python
 $ python app.py
-$ open "http://localhost:5000/"
+$ open "http://127.0.0.1:5000/"
 ```
 
