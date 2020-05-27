@@ -1,8 +1,27 @@
 import os
+from logging.config import dictConfig
 from flask import Flask, request, abort
 from linebot import LineBotApi, WebhookHandler
 from linebot.exceptions import InvalidSignatureError
 from linebot.models import MessageEvent, TextMessage, TextSendMessage
+
+dictConfig({
+    'version': 1,
+    'formatters': {'default': {
+        # 'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+        'format': '%(levelname)s in %(module)s: %(message)s',
+    }},
+    'handlers': {'wsgi': {
+        'class': 'logging.StreamHandler',
+        'stream': 'ext://flask.logging.wsgi_errors_stream',
+        'formatter': 'default'
+    }},
+    'root': {
+        # 'level': 'INFO',
+        'level': 'DEBUG',
+        'handlers': ['wsgi']
+    }
+})
 
 
 app = Flask(__name__)
