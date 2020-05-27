@@ -6,6 +6,8 @@ from linebot.models import MessageEvent, TextMessage, TextSendMessage
 
 
 app = Flask(__name__)
+APP_SETTINGS = os.getenv('APP_SETTINGS', 'config.DevelopmentConfig')
+app.config.from_object(APP_SETTINGS)
 
 LINE_CHANNEL_ACCESS_TOKEN = os.getenv('LINE_CHANNEL_ACCESS_TOKEN', 'aaa')
 LINE_CHANNEL_SECRET = os.getenv('LINE_CHANNEL_SECRET', 'bbb')
